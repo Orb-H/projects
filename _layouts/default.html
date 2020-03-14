@@ -99,18 +99,21 @@
 				<div align="right">
 					{% if page.lang %}
 						{% assign query = tokens | last %}
-						{% assign target = page.link-ref %}
+						{% assign target = "" %}
 						{% if page.category %}
-							{% assign target = "{{ page.category }}/{{ target }}" %}
+							{% assign target = "/{{ page.category }}" %}
+						{% endif %}
+						{% if page.link-ref %}
+							{% assign target = "{{ target }}/{{ page.link-ref }}"%}
 						{% endif %}
 						{% if page.has-query %}
 							{% assign target = "{{ target }}/{{ query }}" %}
 						{% endif %}
 						{% if page.lang == "ko" %}한국어
-						{% else %}<a href="{{ site.baseurl }}/ko/{{ target }}">한국어</a>
+						{% else %}<a href="{{ site.baseurl }}/ko{{ target }}">한국어</a>
 						{% endif %} / 
 						{% if page.lang == "en" %}English
-						{% else %}<a href="{{ site.baseurl }}/en/{{ target }}">English</a>
+						{% else %}<a href="{{ site.baseurl }}/en{{ target }}">English</a>
 						{% endif %}
 					{% endif %}
 				</div>
