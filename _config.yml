@@ -2,8 +2,8 @@
 # Site
 
 title: Orb_H
-url: "https://orb-h.github.io/projects"
-baseurl: ""
+url: "https://orb-h.github.io"
+baseurl: "/projects"
 google_analytics_key:
 show_full_navigation: true
 
