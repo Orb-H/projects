@@ -1,40 +1,49 @@
 ---
 title: 환영합니다!
 lang: ko
-permalink: /ko
+permalink: /ko/
 ---
 
-This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
-**Edition** is perfect for documenting your product, application or service.
-It's populated with example content to give you some ideas.
+이 사이트는 [**Orb_H**](https://github.com/Orb-H)가 진행한 일정 규모 이상의 프로젝트를 정리해놓는 사이트입니다. 팀 프로젝트와 개인 프로젝트를 모두 포함합니다.
 
-ChatApp is a fictional chat application for sending messages and media to others.
-Teams and friend groups would use ChatApp to stay up to date if it existed.
+### 페이지 구조
 
-> [Sign up](http://example.com/signup) or learn more about ChatApp at [example.com](http://example.com/).
 
-### Getting Started
+페이지는 크게 왼쪽 사이드 바와 본문으로 나뉩니다.
 
-Getting a message sent is quick and easy with ChatApp:
+#### 사이드 바
 
-1. Sign up for an account
-2. Add your friends from their email addresses
-3. Type a message or send a photo
+사이드 바는 크게 다섯 부분으로 나뉘는데, 위에서부터 각각 닉네임 및 로고, 검색, 메인 페이지, 카테고리 및 페이지, 원본 테마로의 링크입니다.
 
-> Feel free to send us a message at [feedback@example.com](mailto:feedback@example.com) with your feedback.
+닉네임 및 로고
+: 제 로고와 닉네임입니다.
 
-### Features
+검색
+: 검색을 할 수 있습니다. 텍스트 입력 칸에 원하는 텍스트를 입력하고 엔터키를 누르면 본문에 해당 텍스트를 포함하는 모든 문서를 나열합니다.
 
-Explore more of ChatApp by reading about our features:
+메인 페이지
+: 메인 페이지를 가리키는 링크입니다.
 
-#### Media
+카테고리 및 페이지
+: 각 페이지의 카테고리에 따라 분류가 되어있으며, 내부적으로 지정된 순서대로 페이지가 카테고리별로 나열됩니다. 이 사이트의 경우 카테고리는 프로젝트를 진행한 연도이므로 각 연도별로 진행한 프로젝트가 순서대로 나열됩니다.
 
-Send images, videos and other media to people. Sources include your computer, phone and Facebook.
+원본 테마로의 링크
+: 현재 이 사이트에 사용되고 있는 테마가 업로드되어있는 Github repository로 연결됩니다.
 
-#### Contact Syncing
+#### 본문
 
-Sync your contact list with your phone and/or Facebook contacts. Never lose your contacts between devices again!
+본문은 크게 네 부분으로 나뉘는데, 위에서부터 각각 카테고리, 페이지 제목, 언어 선택, 내용입니다.
 
-#### Devices
+카테고리
+: 해당 페이지의 카테고리를 표시합니다. 메인 페이지나 검색 페이지의 경우 카테고리가 존재하지 않아 제 닉네임이 나옵니다.
 
-ChatApp is available everywhere. Find out how to set it up on your all your devices.
+페이지 제목
+: 해당 페이지의 제목을 표시합니다.
+
+언어 선택
+: 우측 정렬이 되어있으며, 이 사이트에서 지원하는 언어 중 원하는 언어를 선택할 수 있습니다.
+
+내용
+: 해당 페이지의 내용입니다.
+
+### 프로젝트 목록

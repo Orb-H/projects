@@ -1,40 +1,48 @@
 ---
 title: Welcome
 lang: en
-permalink: /en
+permalink: /en/
 ---
 
-This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
-**Edition** is perfect for documenting your product, application or service.
-It's populated with example content to give you some ideas.
+This site is for information about projects [Orb_H](https://github.com/Orb-H) did, including team projects and personal projects.
 
-ChatApp is a fictional chat application for sending messages and media to others.
-Teams and friend groups would use ChatApp to stay up to date if it existed.
+### Page Structure
 
-> [Sign up](http://example.com/signup) or learn more about ChatApp at [example.com](http://example.com/).
+All pages consist of two parts, sidebar on left and content.
 
-### Getting Started
+#### Sidebar
 
-Getting a message sent is quick and easy with ChatApp:
+Sidebar consists of five parts. They are logo with nickname, search, main page, pages with category, and link to theme repo for this theme.
 
-1. Sign up for an account
-2. Add your friends from their email addresses
-3. Type a message or send a photo
+Logo w/ Nickname
+: My logo and nickname.
 
-> Feel free to send us a message at [feedback@example.com](mailto:feedback@example.com) with your feedback.
+Search
+: You can search with it. If you enter text what you want and press <kbd>Enter</kbd>, all pages including query will be shown.
 
-### Features
+Main Page
+: A link to main page.
 
-Explore more of ChatApp by reading about our features:
+Pages w/ category
+: All pages are separated according to their categories, and sorted by number which is internally set. In case of this site, since categories are the year project proceeded, all projects are separated by year and sorted by time project proceeded.
 
-#### Media
+Link to theme repo
+: A link to Github repository of theme used for this site.
 
-Send images, videos and other media to people. Sources include your computer, phone and Facebook.
+#### Content
 
-#### Contact Syncing
+Content consists of four parts. They are category, title, languages, and content.
 
-Sync your contact list with your phone and/or Facebook contacts. Never lose your contacts between devices again!
+Category
+: A category of this page. However, my nickname will be shown instead of category if you're on main page or search page.
 
-#### Devices
+Title
+: A title of page.
 
-ChatApp is available everywhere. Find out how to set it up on your all your devices.
+Languages
+: You can select language which is supported on this site. Right-aligned just below the title.
+
+Content
+: A content of page.
+
+### List of Projects
