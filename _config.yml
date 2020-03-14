@@ -1,9 +1,9 @@
 # ----
 # Site
 
-title: Edition Template
-url: "https://long-pig.cloudvent.net"
-baseurl:
+title: Orb_H
+url: "https://orb-h.github.io/projects"
+baseurl: ""
 google_analytics_key:
 show_full_navigation: true
 
@@ -22,7 +22,7 @@ social:
 # -----
 # Build
 
-timezone: Etc/UTC
+timezone: Asia/Seoul
 
 permalink: pretty
 
@@ -77,3 +77,6 @@ defaults:
 types:
   - minor
   - major
+
+# language
+def_lang: ko

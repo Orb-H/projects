@@ -8,11 +8,31 @@
 		{% seo %}
 		{% feed_meta %}
 
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		{% assign tokens = page.url | split: '/' %}
+		{% assign lang = tokens[1] %}
+
+		{% case lang %}
+			{% when "ko" %}
+				<link href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
+			{% when "en" %}
+				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		{% endcase %}
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-		<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/touch-icon.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
+		<link rel="stylesheet" href="{{ site.baseurl }}/css/{{ lang }}.css">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-16.png" sizes="16x16">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-32.png" sizes="32x32">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-48.png" sizes="48x48">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-57.png" sizes="57x57">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-64.png" sizes="64x64">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-72.png" sizes="72x72">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-96.png" sizes="96x96">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-120.png" sizes="120x120">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-128.png" sizes="128x128">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-144.png" sizes="144x144">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-152.png" sizes="152x152">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-195.png" sizes="195x195">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-228.png" sizes="228x228">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-256.png" sizes="256x256">
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
@@ -27,12 +47,12 @@
 	<body>
 		<header>
 			<h1>
-				<a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/emblem.svg" width="40" height="40" alt="{{ site.title }} logo"></a>
+				<a href="{{ site.baseurl }}/{{ page.lang }}"><img src="{{ site.baseurl }}/images/emblem.png" width="40px" height="40px" alt="{{ site.title }} logo"></a>
 				{{ site.title }}
 				<button type="button" class="open-nav" id="open-nav"></button>
 			</h1>
 
-			<form action="{{ site.baseurl }}/search/" method="get">
+			<form action="{{ site.baseurl }}/{{ lang }}/search/" method="get">
 				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
 				<input type="submit" value="Search" style="display: none;">
 			</form>
@@ -41,14 +61,17 @@
 				<ul>
 					<li class="nav-item top-level {% if page.url == '/' %}current{% endif %}">
 						{% assign home = site.html_pages | where: 'url', '/' | first %}
-						<a href="{{ site.baseurl }}/">{{ home.title }}</a>
+						<a href="{{ site.baseurl }}/{{ page.lang }}">{{ home.title }}</a>
 					</li>
 				</ul>
 
 				<ul>
-					{% assign grouped = site.docs | group_by: 'category' %}
+					{% assign grouped = site.docs | where: "lang", page.lang | group_by: 'category' %}
 					{% for group in grouped %}
 						<li class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
+							{% if group.name == "" %}
+                        		{% continue %}
+                    		{% endif %}
 							{% assign items = group.items | sort: 'order' %}
 							<a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
 							<ul>
@@ -73,6 +96,24 @@
 			<div class="page-header">
 				<h2>{% if page.category %}{{ page.category }}{% else %}{{ site.title }}{% endif %}</h2>
 				<h3>{{ page.title }}</h3>
+				<div align="right">
+					{% if page.lang %}
+						{% assign query = tokens | last %}
+						{% assign target = page.link-ref %}
+						{% if page.category %}
+							{% assign target = "{{ page.category }}/{{ target }}" %}
+						{% endif %}
+						{% if page.has-query %}
+							{% assign target = "{{ target }}/{{ query }}" %}
+						{% endif %}
+						{% if page.lang == "ko" %}한국어
+						{% else %}<a href="{{ site.baseurl }}/ko/{{ target }}">한국어</a>
+						{% endif %} / 
+						{% if page.lang == "en" %}English
+						{% else %}<a href="{{ site.baseurl }}/en/{{ target }}">English</a>
+						{% endif %}
+					{% endif %}
+				</div>
 			</div>
 			<article class="content">
 				{{ content }}
