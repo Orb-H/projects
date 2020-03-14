@@ -33,6 +33,7 @@
 		<link rel="icon" href="{{ site.baseurl }}/images/favicon-195.png" sizes="195x195">
 		<link rel="icon" href="{{ site.baseurl }}/images/favicon-228.png" sizes="228x228">
 		<link rel="icon" href="{{ site.baseurl }}/images/favicon-256.png" sizes="256x256">
+		<link rel="icon" href="{{ site.baseurl }}/images/favicon-480.png" sizes="480x480">
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
@@ -59,9 +60,8 @@
 
 			<nav {% if site.show_full_navigation %}class="full-navigation"{% endif %}>
 				<ul>
-					<li class="nav-item top-level {% if page.url == '/' %}current{% endif %}">
-						{% assign home = site.html_pages | where: 'url', '/' | first %}
-						<a href="{{ site.baseurl }}/{{ page.lang }}">{{ home.title }}</a>
+					<li class="nav-item top-level">
+						<a href="{{ site.baseurl }}/{{ lang }}/">Main Page</a>
 					</li>
 				</ul>
 
