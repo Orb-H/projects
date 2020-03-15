@@ -10,6 +10,9 @@
 
 		{% assign tokens = page.url | split: '/' %}
 		{% assign lang = tokens[1] %}
+		{% unless site.languages contains lang %}
+			{% assign lang = site.def_lang %}
+		{% endunless %}
 
 		{% case lang %}
 			{% when "ko" %}
@@ -17,6 +20,7 @@
 			{% when "en" %}
 				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
 		{% endcase %}
+
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/{{ lang }}.css">
 		<link rel="icon" href="{{ site.baseurl }}/images/favicon-16.png" sizes="16x16">
@@ -85,8 +89,21 @@
 
 				<ul>
 					<li class="nav-item top-level">
-						{% assign changelog = site.html_pages | where: 'url', '/changelog/' | first %}
-						<a href="https://github.com/CloudCannon/edition-jekyll-template">Repository of this theme</a>
+						<a>{{ site.data.languages[lang].other }}</a>
+						<ul>
+							<li class="nav-item">
+								<a href="https://orb-h.github.io/{{ lang }}/">{{ site.data.languages[lang].root }}</a>
+					</li>
+							<li class="nav-item">
+								<a href="https://orb-h.github.io/resume/{{ lang }}/">{{ site.data.languages[lang].resume }}</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://orb-h.github.io/blog/{{ lang }}/">{{ site.data.languages[lang].blog }}</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://github.com/CloudCannon/edition-jekyll-template"><b>{{ site.data.languages[lang].theme }}</b></a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</nav>
