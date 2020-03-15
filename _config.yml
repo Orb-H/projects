@@ -80,3 +80,6 @@ types:
 
 # language
 def_lang: ko
+languages:
+  - ko
+  - en

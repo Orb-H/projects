@@ -1,4 +1,7 @@
-<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+{% case include.lang %}
+	{% when "ko" %}<p><span id="search-query-container" style="display: none;">"<strong id="search-query"></strong>"에 대한 </span>검색 결과<span id="search-process"> 대기 중...</span></p>
+	{% when "en" %}<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+{% endcase %}
 <ul id="search-results"></ul>
 
 <script>
@@ -25,4 +28,4 @@
 	};
 </script>
 <script src="{{ site.baseurl }}/scripts/lunr.min.js" charset="utf-8"></script>
-<script src="{{ site.baseurl }}/scripts/search.js" charset="utf-8"></script>
+<script src="{{ site.baseurl }}/scripts/search.js" charset="utf-8" found="{{ site.data.languages[include.lang].search_process_found }}" not_found="{{ site.data.languages[include.lang].search_process_not_found }}"></script>

@@ -12,7 +12,7 @@ All pages consist of two parts, sidebar on left and content.
 
 #### Sidebar
 
-Sidebar consists of five parts. They are logo with nickname, search, main page, pages with category, and link to theme repo for this theme.
+Sidebar consists of five parts. They are logo with nickname, search, main page, pages with category, and external links.
 
 Logo w/ Nickname
 : My logo and nickname.
@@ -26,8 +26,8 @@ Main Page
 Pages w/ category
 : All pages are separated according to their categories, and sorted by number which is internally set. In case of this site, since categories are the year project proceeded, all projects are separated by year and sorted by time project proceeded.
 
-Link to theme repo
-: A link to Github repository of theme used for this site.
+External Link
+: External links such as other subpages on my site(orb-h.github.io) and repository of theme for this site.
 
 #### Content
 

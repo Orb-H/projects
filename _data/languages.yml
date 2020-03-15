@@ -1,2 +1,20 @@
-- "ko"
-- "en"
+ko:
+  blog: 블로그
+  main: 메인 페이지
+  other: 다른 링크
+  resume: 이력서
+  root: 루트 페이지
+  search: 검색...
+  search_process_found: ":"
+  search_process_not_found: " 없음"
+  theme: 테마 리포지토리
+en:
+  blog: blog
+  main: Main Page
+  other: Other Links
+  resume: resume
+  root: Root Page
+  search: Search...
+  search_process_found: "Showing"
+  search_process_not_found: "No"
+  theme: Repository of This Theme
