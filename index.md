@@ -3,5 +3,5 @@ title: Main Page
 ---
 
 <script>
-  window.location.replace('{{ site.url }}{{ site.baseurl }}/{{ site.def_lang }}/');
+  window.location.replace('{{ site.baseurl }}/{{ site.def_lang }}/');
 </script>
