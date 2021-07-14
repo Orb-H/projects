@@ -1,5 +1,6 @@
 body {
-    font-family: "NanumGothic", serif;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 300;
 }
 
 pre,
@@ -22,4 +23,5 @@ table,
 .badge,
 .nav-item {
     font-family: "NanumSquare", sans-serif;
+    font-weight: 400;
 }

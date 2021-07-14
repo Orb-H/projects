@@ -14,12 +14,9 @@
 			{% assign lang = site.def_lang %}
 		{% endunless %}
 
-		{% case lang %}
-			{% when "ko" %}
-				<link href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
-			{% when "en" %}
-				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
-		{% endcase %}
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
 
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/{{ lang }}.css">
