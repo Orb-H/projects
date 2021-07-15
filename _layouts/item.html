@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<p align="right">기간: {{ page.period }}</p>
+<p>
+    {% for tag in page.tags %}
+        <code>{{ tag }}</code>
+    {% endfor %}
+</p>
+
+<blockquote>{{ page.summary }}</blockquote>
+
+{{ page.content }}
