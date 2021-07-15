@@ -18,6 +18,22 @@
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
 
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			  extensions: ["tex2jax.js"],
+			  jax: ["input/TeX", "output/HTML-CSS"],
+			  tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+				processEscapes: true
+			  },
+			  "HTML-CSS": { fonts: ["TeX"] }
+			});
+		</script>
+		<script type="text/javascript"
+		  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+	   </script>
+
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/{{ lang }}.css">
 		<link rel="icon" href="{{ site.baseurl }}/images/favicon-16.png" sizes="16x16">
