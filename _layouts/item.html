@@ -48,7 +48,11 @@ layout: default
         }
     }
 </script>
-<p align="right">기간: {{ page.period }}</p>
+<p align="right">
+기간: {{ page.period }}<br />
+작성 일시: {{ page.write_time }}<br />
+마지막 수정 일시: {{ page.edit_time }}<br />
+</p>
 <p>
     {% for tag in page.tags %}
         <code>{{ tag }}</code>
