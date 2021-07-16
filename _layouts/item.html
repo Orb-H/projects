@@ -2,7 +2,57 @@
 layout: default
 ---
 
-<p align="right">기간: {{ page.period }}</p>
+<script>
+    window.onload = function() {
+        var headings = document.querySelectorAll("article h3,h4,h5,h6");
+        var toc = document.getElementById("toc");
+        var cur_toc = toc;
+        var depth = 0;
+        var nums = [0, 1, 1, 1];
+
+        for(var i = 0; i < headings.length; i++) {
+            var element = headings[i];
+            var new_depth = parseInt(element.tagName.substr(1)) - 3;
+            var prefix = "";
+
+            if (new_depth < depth) {
+                nums[new_depth]++;
+                for (var j = 0; j <= new_depth; j++) {
+                    prefix += nums[j] + ".";
+                }
+                for (var j = depth; j > new_depth; j--) {
+                    cur_toc = cur_toc.parentElement.parentElement;
+                }
+            } else if (new_depth == depth) {
+                nums[depth]++;
+                for (var j = 0; j <= depth; j++) {
+                    prefix += nums[j] + ".";
+                }
+            } else {
+                for (var j = depth + 1; j <= new_depth; j++) {
+                    nums[j] = 1;
+                }
+                for (var j = 0; j <= new_depth; j++) {
+                    prefix += nums[j] + ".";
+                }
+                cur_toc.lastElementChild.append(document.createElement("ul"));
+                cur_toc = cur_toc.lastElementChild.lastElementChild;
+            }
+
+            var li = document.createElement("li");
+            li.innerHTML = "<a href=\"#" + element.id + "\">" + prefix + "</a> " + element.textContent;
+            cur_toc.append(li);
+
+            element.innerHTML = "<a href=\"#toc\">" + prefix + "</a> " + element.innerHTML;
+            depth = new_depth;
+        }
+    }
+</script>
+<p align="right">
+기간: {{ page.period }}<br />
+작성 일시: {{ page.write_time }}<br />
+마지막 수정 일시: {{ page.edit_time }}<br />
+</p>
 <p>
     {% for tag in page.tags %}
         <code>{{ tag }}</code>
@@ -10,5 +60,9 @@ layout: default
 </p>
 
 <blockquote>{{ page.summary }}</blockquote>
+
+<ul id="toc">
+    <li style="font-size:20px;font-weight:bold;">목차</li>
+</ul>
 
 {{ page.content }}
