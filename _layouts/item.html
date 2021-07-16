@@ -2,6 +2,42 @@
 layout: default
 ---
 
+<script>
+    window.onload = function() {
+        var headings = document.querySelectorAll("article h3,h4,h5,h6");
+        var depth = -1;
+        var nums = [0, 0, 0, 0];
+
+        for(var i = 0; i < headings.length; i++) {
+            var element = headings[i];
+            var new_depth = parseInt(element.tagName.substr(1)) - 3;
+            var prefix = "";
+
+            if (new_depth < depth) {
+                nums[new_depth]++;
+                for (var j = 0; j <= new_depth; j++) {
+                    prefix += nums[j] + ".";
+                }
+                depth = new_depth;
+            } else if (new_depth == depth) {
+                nums[depth]++;
+                for (var j = 0; j <= depth; j++) {
+                    prefix += nums[j] + ".";
+                }
+            } else {
+                for (var j = depth + 1; j <= new_depth; j++) {
+                    nums[j] = 1;
+                }
+                for (var j = 0; j <= new_depth; j++) {
+                    prefix += nums[j] + ".";
+                }
+                depth = new_depth;
+            }
+
+            element.textContent = prefix + " " + element.textContent;
+        }
+    }
+</script>
 <p align="right">기간: {{ page.period }}</p>
 <p>
     {% for tag in page.tags %}
