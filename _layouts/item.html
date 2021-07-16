@@ -5,8 +5,10 @@ layout: default
 <script>
     window.onload = function() {
         var headings = document.querySelectorAll("article h3,h4,h5,h6");
-        var depth = -1;
-        var nums = [0, 0, 0, 0];
+        var toc = document.getElementById("toc");
+        var cur_toc = toc;
+        var depth = 0;
+        var nums = [0, 1, 1, 1];
 
         for(var i = 0; i < headings.length; i++) {
             var element = headings[i];
@@ -18,7 +20,9 @@ layout: default
                 for (var j = 0; j <= new_depth; j++) {
                     prefix += nums[j] + ".";
                 }
-                depth = new_depth;
+                for (var j = depth; j > new_depth; j--) {
+                    cur_toc = cur_toc.parentElement.parentElement;
+                }
             } else if (new_depth == depth) {
                 nums[depth]++;
                 for (var j = 0; j <= depth; j++) {
@@ -31,10 +35,16 @@ layout: default
                 for (var j = 0; j <= new_depth; j++) {
                     prefix += nums[j] + ".";
                 }
-                depth = new_depth;
+                cur_toc.lastElementChild.append(document.createElement("ul"));
+                cur_toc = cur_toc.lastElementChild.lastElementChild;
             }
 
-            element.textContent = prefix + " " + element.textContent;
+            var li = document.createElement("li");
+            li.innerHTML = "<a href=\"#" + element.id + "\">" + prefix + "</a> " + element.textContent;
+            cur_toc.append(li);
+
+            element.innerHTML = "<a href=\"#toc\">" + prefix + "</a> " + element.innerHTML;
+            depth = new_depth;
         }
     }
 </script>
@@ -46,5 +56,9 @@ layout: default
 </p>
 
 <blockquote>{{ page.summary }}</blockquote>
+
+<ul id="toc">
+    <li style="font-size:20px;font-weight:bold;">목차</li>
+</ul>
 
 {{ page.content }}
