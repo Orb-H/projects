@@ -48,11 +48,19 @@ layout: default
         }
     }
 </script>
+{% if page.lang == "en" %}
+<p align="right">
+Period: {{ page.period }}<br />
+Written: {{ page.write_time }}<br />
+Last edited: {{ page.edit_time }}
+</p>
+{% else %}
 <p align="right">
 기간: {{ page.period }}<br />
-작성 일시: {{ page.write_time }}<br />
-마지막 수정 일시: {{ page.edit_time }}<br />
+작성: {{ page.write_time }}<br />
+마지막 수정: {{ page.edit_time }}
 </p>
+{% endif %}
 <p>
     {% for tag in page.tags %}
         <code>{{ tag }}</code>
@@ -62,7 +70,11 @@ layout: default
 <blockquote>{{ page.summary }}</blockquote>
 
 <ul id="toc">
+    {% if page.lang == "en" %}
+    <li style="font-size:20px;font-weight:bold;">Index</li>
+    {% else %}
     <li style="font-size:20px;font-weight:bold;">목차</li>
+    {% endif %}
 </ul>
 
 {{ page.content }}
