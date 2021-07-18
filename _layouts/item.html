@@ -50,15 +50,27 @@ layout: default
 </script>
 {% if page.lang == "en" %}
 <p align="right">
+{% if page.period != nil %}
 Period: {{ page.period }}<br />
+{% endif %}
+{% if page.written_time != nil %}
 Written: {{ page.write_time }}<br />
+{% endif %}
+{% if page.edit_time != nil %}
 Last edited: {{ page.edit_time }}
+{% endif %}
 </p>
 {% else %}
 <p align="right">
+{% if page.period != nil %}
 기간: {{ page.period }}<br />
+{% endif %}
+{% if page.written_time != nil %}
 작성: {{ page.write_time }}<br />
+{% endif %}
+{% if page.edit_time != nil %}
 마지막 수정: {{ page.edit_time }}
+{% endif %}
 </p>
 {% endif %}
 <p>
@@ -67,7 +79,9 @@ Last edited: {{ page.edit_time }}
     {% endfor %}
 </p>
 
+{% if page.summary != nil %}
 <blockquote>{{ page.summary }}</blockquote>
+{% endif %}
 
 <ul id="toc">
     {% if page.lang == "en" %}
