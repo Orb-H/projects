@@ -7,7 +7,7 @@ link-ref: titration
 permalink: /ko/2016/titration/
 layout: item
 
-period: "2016.10 ~ 2016.12, 2017.03 ~ 2017.06"
+period: "'16.10~12, '17.03~06"
 tags:
   - "Java"
   - "Swing"
