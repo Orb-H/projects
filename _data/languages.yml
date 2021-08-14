@@ -8,6 +8,11 @@ ko:
   search_process_found: ":"
   search_process_not_found: " 없음"
   theme: 테마 리포지토리
+
+  duration: 진행 기간
+  write_time: 작성
+  edit_time: 마지막 수정
+  index: 목차
 en:
   blog: blog
   external: External Links
@@ -18,3 +23,8 @@ en:
   search_process_found: "Showing"
   search_process_not_found: "No"
   theme: Repository of This Theme
+
+  duration: Duration
+  write_time: Written
+  edit_time: Last edited
+  index: Index

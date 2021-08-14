@@ -48,31 +48,18 @@ layout: default
         }
     }
 </script>
-{% if page.lang == "en" %}
 <p align="right">
-{% if page.period != nil %}
-Period: {{ page.period }}<br />
+{% assign menu = site.data.languages[page.lang] %}
+{% if page.duration != nil %}
+    {{ menu.duration }}: {{ page.duration }}<br />
 {% endif %}
-{% if page.written_time != nil %}
-Written: {{ page.write_time }}<br />
+{% if page.write_time != nil %}
+    {{ menu.write_time }}: {{ page.write_time }}<br />
 {% endif %}
 {% if page.edit_time != nil %}
-Last edited: {{ page.edit_time }}
+    {{ menu.edit_time }}: {{ page.edit_time }}<br />
 {% endif %}
 </p>
-{% else %}
-<p align="right">
-{% if page.period != nil %}
-기간: {{ page.period }}<br />
-{% endif %}
-{% if page.written_time != nil %}
-작성: {{ page.write_time }}<br />
-{% endif %}
-{% if page.edit_time != nil %}
-마지막 수정: {{ page.edit_time }}
-{% endif %}
-</p>
-{% endif %}
 <p>
     {% for tag in page.tags %}
         <code>{{ tag }}</code>
@@ -84,11 +71,7 @@ Last edited: {{ page.edit_time }}
 {% endif %}
 
 <ul id="toc">
-    {% if page.lang == "en" %}
-    <li style="font-size:20px;font-weight:bold;">Index</li>
-    {% else %}
-    <li style="font-size:20px;font-weight:bold;">목차</li>
-    {% endif %}
+    <li style="font-size:20px;font-weight:bold;">{{ menu.index }}</li>
 </ul>
 
 {{ page.content }}
