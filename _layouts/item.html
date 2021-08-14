@@ -14,6 +14,7 @@ layout: default
             var element = headings[i];
             var new_depth = parseInt(element.tagName.substr(1)) - 3;
             var prefix = "";
+            var prefix2 = "";
 
             if (new_depth < depth) {
                 nums[new_depth]++;
@@ -39,11 +40,12 @@ layout: default
                 cur_toc = cur_toc.lastElementChild.lastElementChild;
             }
 
+            prefix2 = prefix.substr(0, prefix.length - 1);
             var li = document.createElement("li");
-            li.innerHTML = "<a href=\"#" + element.id + "\">" + prefix + "</a> " + element.textContent;
+            li.innerHTML = "<a href=\"#s-" + prefix2 + "\">" + prefix + "</a> " + element.textContent;
             cur_toc.append(li);
 
-            element.innerHTML = "<a href=\"#toc\">" + prefix + "</a> " + element.innerHTML;
+            element.innerHTML = "<a href=\"#toc\" id=s-" + prefix2 + ">" + prefix + "</a> " + element.innerHTML;
             depth = new_depth;
         }
     }
