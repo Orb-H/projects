@@ -2,18 +2,42 @@
 layout: default
 ---
 
+<style>
+    .content > h3::before,
+    .content > h4::before,
+    .content > h5::before,
+    .content > h6::before {
+        content: "▽ ";
+    }
+
+    .content > h3.folded, .content > h3.folded *,
+    .content > h4.folded, .content > h4.folded *,
+    .content > h5.folded, .content > h5.folded *,
+    .content > h6.folded, .content > h6.folded * {
+        color: #aeaeae;
+    }
+
+    .content > h3.folded::before,
+    .content > h4.folded::before,
+    .content > h5.folded::before,
+    .content > h6.folded::before {
+        content: "▷ ";
+    }
+</style>
 <script>
     window.onload = function() {
-        var headings = document.querySelectorAll("article h3,h4,h5,h6");
+        var headings = document.querySelectorAll(".content > h3,h4,h5,h6");
         var toc = document.getElementById("toc");
         var cur_toc = toc;
         var depth = 0;
         var nums = [0, 1, 1, 1];
+        var article = document.getElementsByTagName("article")[0];
 
         for(var i = 0; i < headings.length; i++) {
             var element = headings[i];
             var new_depth = parseInt(element.tagName.substr(1)) - 3;
             var prefix = "";
+            var prefix2 = "";
 
             if (new_depth < depth) {
                 nums[new_depth]++;
@@ -39,19 +63,65 @@ layout: default
                 cur_toc = cur_toc.lastElementChild.lastElementChild;
             }
 
+            prefix2 = prefix.substr(0, prefix.length - 1);
             var li = document.createElement("li");
-            li.innerHTML = "<a href=\"#" + element.id + "\">" + prefix + "</a> " + element.textContent;
+            li.innerHTML = "<a href=\"#s-" + prefix2 + "\">" + prefix + "</a> " + element.textContent;
             cur_toc.append(li);
 
-            element.innerHTML = "<a href=\"#toc\">" + prefix + "</a> " + element.innerHTML;
+            element.innerHTML = "<a href=\"#toc\" id=s-" + prefix2 + ">" + prefix + "</a> " + element.innerHTML;
             depth = new_depth;
         }
+
+        for (var i = 0; i < headings.length; i++) {
+            var folder = document.createElement("div");
+            folder.id = "s" + headings[i].children[0].id;
+            headings[i].setAttribute("onclick", "toggle_fold('" + headings[i].children[0].id + "')");
+
+            article.insertBefore(folder, headings[i].nextElementSibling);
+            var cur_node = folder.nextElementSibling;
+
+            if (i === headings.length - 1) {
+                while (cur_node && !(cur_node.tagName && (cur_node.classList.contains("footnotes")))) {
+                    folder.append(cur_node);
+                    cur_node = folder.nextElementSibling;
+                }
+
+                if (cur_node && cur_node.classList.contains("footnotes")) {
+                    article.insertBefore(folder.lastElementChild, cur_node);
+                }
+            } else {
+                while (!cur_node.isEqualNode(headings[i + 1])) {
+                    folder.append(cur_node);
+                    cur_node = folder.nextElementSibling;
+                }
+            }
+        }
+    }
+
+    function toggle_fold(header_id) {
+        var content_id = "s" + header_id;
+        var header = document.getElementById(header_id).parentElement;
+
+        if (header.classList.contains("folded")) { // Content is hidden
+            document.getElementById(content_id).style["display"] = "block";
+        } else { // Content is shown
+            document.getElementById(content_id).style["display"] = "none";
+        }
+
+        header.classList.toggle("folded");
     }
 </script>
 <p align="right">
-기간: {{ page.period }}<br />
-작성 일시: {{ page.write_time }}<br />
-마지막 수정 일시: {{ page.edit_time }}<br />
+{% assign menu = site.data.languages[page.lang] %}
+{% if page.duration != nil %}
+    {{ menu.duration }}: {{ page.duration }}<br />
+{% endif %}
+{% if page.write_time != nil %}
+    {{ menu.write_time }}: {{ page.write_time }}<br />
+{% endif %}
+{% if page.edit_time != nil %}
+    {{ menu.edit_time }}: {{ page.edit_time }}<br />
+{% endif %}
 </p>
 <p>
     {% for tag in page.tags %}
@@ -59,10 +129,12 @@ layout: default
     {% endfor %}
 </p>
 
+{% if page.summary != nil %}
 <blockquote>{{ page.summary }}</blockquote>
+{% endif %}
 
 <ul id="toc">
-    <li style="font-size:20px;font-weight:bold;">목차</li>
+    <li style="font-size:20px;font-weight:bold;">{{ menu.index }}</li>
 </ul>
 
 {{ page.content }}
