@@ -7,7 +7,7 @@ link-ref: titration
 permalink: /ko/2016/titration
 layout: item
 
-period: "'16.10~12, '17.03~06"
+duration: "2016.10~12, 2017.03~06"
 tags:
   - "Java"
   - "Swing"
@@ -15,6 +15,8 @@ tags:
   - "Analytical Chemistry"
   - "Mathematics"
 summary: "산-염기 적정을 방정식으로 나타내고 이 해를 구하여 예측값을 구하는 프로그램 개발"
+write_time: 2021-07-15T23:27:28+09:00
+edited_time: 2021-08-22T22:17:03+09:00
 ---
 
 ### 계기
@@ -143,21 +145,21 @@ K_2=K_b=\frac{[BH^+][OH^-]}{[B]}\\
 K_3=K_w
 $$
 
-이 상태로 식을 정리하면 매우 복잡하고 길기 때문에 복잡한 기호를 다른 기호로 치환한다.
+이 상태로 식을 정리하면 매우 복잡하고 길기 때문에 복잡한 기호를 다른 기호로 치환한다. 여기서 V는 적정하려는 시약의 부피, v는 첨가한 표준 용액의 부피이다.
 
 $$
 \begin{aligned}
 K_a&\rightarrow&a\\
 K_b&\rightarrow&b\\
 K_w&\rightarrow&w\\
-[HA]_0&\rightarrow&A\\
-[B]_0&\rightarrow&B\\
+[HA]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
+[B]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
 [H^+]&\rightarrow&x\\
 [OH^-]&\rightarrow&y&=w/x
 \end{aligned}
 $$
 
-$b'=\frac{w}{b}$[^4]로 잡은 후 위 식을 정리하여 $x$에 대한 방정식을 세우면 아래와 같이 된다. 자세한 과정은 [방정식 유도 과정](./equation)을 참고하면 된다.
+$b'=\frac{w}{b}$[^4]로 잡은 후 위 식을 정리하여 $x$에 대한 방정식을 세우면 아래와 같이 된다. 자세한 과정은 [여기](./equation)를 참고하면 된다.
 
 $$
 x^4+(a+B+b')x^3+(ab'+aB-Aa-w)x^2\\
@@ -192,7 +194,7 @@ K_3=K_b=\frac{[BH^+][OH^-]}{[B]}\\
 K_4=K_w
 $$
 
-1가 산-1가 염기와 마찬가지로 다른 기호로 치환한다.
+1가 산-1가 염기와 마찬가지로 다른 기호로 치환한다. 위와 마찬가지로 V는 적정하려는 시약의 부피, v는 첨가한 표준 용액의 부피이다.
 
 $$
 \begin{aligned}
@@ -200,14 +202,14 @@ K_{a1}&\rightarrow&a\\
 K_{a2}&\rightarrow&a'\\
 K_b&\rightarrow&b\\
 K_w&\rightarrow&w\\
-[H_2A]_0&\rightarrow&A\\
-[B]_0&\rightarrow&B\\
+[H_2A]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
+[B]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
 [H^+]&\rightarrow&x\\
 [OH^-]&\rightarrow&y&=w/x
 \end{aligned}
 $$
 
-$b'=\frac{w}{b}$[^4]로 잡은 후 위 식을 정리하여 $x$에 대한 방정식을 세우면 아래와 같이 된다. 자세한 과정은 [방정식 유도 과정](./equation)을 참고하면 된다.
+$b'=\frac{w}{b}$[^4]로 잡은 후 위 식을 정리하여 $x$에 대한 방정식을 세우면 아래와 같이 된다. 자세한 과정은 [여기](./equation)를 참고하면 된다.
 
 $$
 x^5+(a+B+b')x^4+(aa'+ab'+aB-Aa-w)x^3\\
@@ -245,7 +247,7 @@ K_4=K_b=\frac{[BH^+][OH^-]}{[B]}\\
 K_5=K_w
 $$
 
-편의를 위해 상수를 다른 기호로 치환한다.
+편의를 위해 상수를 다른 기호로 치환한다. 위와 마찬가지로 V는 적정하려는 시약의 부피, v는 첨가한 표준 용액의 부피이다.
 
 $$
 \begin{aligned}
@@ -254,14 +256,14 @@ K_{a2}&\rightarrow&a'\\
 K_{a3}&\rightarrow&a''\\
 K_b&\rightarrow&b\\
 K_w&\rightarrow&w\\
-[H_2A]_0&\rightarrow&A\\
-[B]_0&\rightarrow&B\\
+[H_3A]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
+[B]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
 [H^+]&\rightarrow&x\\
 [OH^-]&\rightarrow&y&=w/x
 \end{aligned}
 $$
 
-$b'=\frac{w}{b}$[^4]로 잡은 후 위 식을 정리하여 $x$에 대한 방정식을 세우면 아래와 같이 된다. 자세한 과정은 [방정식 유도 과정](./equation)을 참고하면 된다.
+$b'=\frac{w}{b}$[^4]로 잡은 후 위 식을 정리하여 $x$에 대한 방정식을 세우면 아래와 같이 된다. 자세한 과정은 [여기](./equation)를 참고하면 된다.
 
 $$
 x^6+(a+B+b')x^5+(ab'+aB-w-aA)x^4\\
