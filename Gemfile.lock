@@ -39,6 +39,8 @@ GEM
       listen (~> 3.0)
     kramdown (2.3.1)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     liquid (4.0.3)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -69,6 +71,7 @@ DEPENDENCIES
   jekyll-feed (= 0.13.0)
   jekyll-seo-tag (= 2.6.1)
   jekyll-sitemap (= 1.4.0)
+  kramdown-parser-gfm
   tzinfo
   tzinfo-data
 
