@@ -25,6 +25,9 @@ layout: default
     }
 </style>
 <script>
+    var ps = [];
+    var do_process = true;
+
     window.onload = function() {
         var headings = document.querySelectorAll(".content > h3,h4,h5,h6");
         var toc = document.getElementById("toc");
@@ -77,13 +80,13 @@ layout: default
             folder.id = "s" + headings[i].children[0].id;
             headings[i].setAttribute("onclick", "toggle_fold('" + headings[i].children[0].id + "')");
 
-            article.insertBefore(folder, headings[i].nextElementSibling);
-            var cur_node = folder.nextElementSibling;
+            article.insertBefore(folder, headings[i].nextSibling);
+            var cur_node = folder.nextSibling;
 
             if (i === headings.length - 1) {
                 while (cur_node && !(cur_node.tagName && (cur_node.classList.contains("footnotes")))) {
                     folder.append(cur_node);
-                    cur_node = folder.nextElementSibling;
+                    cur_node = folder.nextSibling;
                 }
 
                 if (cur_node && cur_node.classList.contains("footnotes")) {
@@ -92,10 +95,38 @@ layout: default
             } else {
                 while (!cur_node.isEqualNode(headings[i + 1])) {
                     folder.append(cur_node);
-                    cur_node = folder.nextElementSibling;
+                    cur_node = folder.nextSibling;
                 }
             }
         }
+
+        ps = Array.from(document.getElementsByTagName("div"));
+
+        window.onresize = window.onscroll = function(e) {
+            if (do_process) {
+                do_process = false;
+                setTimeout(function() {
+                    for (var i = ps.length - 1; i >= 0; i--) {
+                        if (isElementInViewport(ps[i])) {
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub, ps[i]]);
+                            ps.splice(i, 1);
+                        }
+                    }
+                }, 0);
+                setTimeout(function() {do_process = true;}, 500);
+            }
+        }
+    }
+
+    function isElementInViewport (el) {
+        var rect = el.getBoundingClientRect();
+
+        return (
+            (rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0) && /* or $(window).height() */
+            (rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+            rect.right >= 0) /* or $(window).width() */
+        );
     }
 
     function toggle_fold(header_id) {
@@ -128,7 +159,33 @@ layout: default
         <code>{{ tag }}</code>
     {% endfor %}
 </p>
-
+{% if page.parent != nil or page.children != nil or page.related != nil %}
+<p>
+{% if page.parent != nil %}
+    {% assign par = site.docs | where: "lang", page.lang | where: "link-ref", page.parent %}
+    {% assign par = par[0] %}
+    🔼상위 문서: <a href="{{ site.baseurl }}/{{ page.lang }}/{{ par.category }}/{{ par.link-ref }}/">{{ par.title }}</a>
+    {% if page.children != nil or page.related != nil %}<br />{% endif %}
+{% endif %}
+{% if page.children != nil %}
+    🔽하위 문서: {% for child in page.children %}
+        {% assign par = site.docs | where: "lang", page.lang | where: "link-ref", child %}
+        {% assign par = par[0] %}
+        {% if forloop.index0 != 0 %},{% endif %}
+        <a href="{{ site.baseurl }}/{{ page.lang }}/{{ par.category }}/{{ par.link-ref }}/">{{ par.title }}</a>
+    {% endfor %}
+    {% if page.related != nil %}<br />{% endif %}
+{% endif %}
+{% if page.related != nil %}
+    🔀관련 문서: {% for rel in page.related %}
+        {% assign par = site.docs | where: "lang", page.lang | where: "link-ref", rel %}
+        {% assign par = par[0] %}
+        {% if forloop.index0 != 0 %},{% endif %}
+        <a href="{{ site.baseurl }}/{{ page.lang }}/{{ par.category }}/{{ par.link-ref }}/">{{ par.title }}</a>
+    {% endfor %}
+{% endif %}
+</p>
+{% endif %}
 {% if page.summary != nil %}
 <blockquote>{{ page.summary }}</blockquote>
 {% endif %}
