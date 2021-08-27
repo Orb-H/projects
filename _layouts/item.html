@@ -159,7 +159,33 @@ layout: default
         <code>{{ tag }}</code>
     {% endfor %}
 </p>
-
+{% if page.parent != nil or page.children != nil or page.related != nil %}
+<p>
+{% if page.parent != nil %}
+    {% assign par = site.docs | where: "lang", page.lang | where: "link-ref", page.parent %}
+    {% assign par = par[0] %}
+    🔼상위 문서: <a href="{{ site.baseurl }}/{{ page.lang }}/{{ par.category }}/{{ par.link-ref }}/">{{ par.title }}</a>
+    {% if page.children != nil or page.related != nil %}<br />{% endif %}
+{% endif %}
+{% if page.children != nil %}
+    🔽하위 문서: {% for child in page.children %}
+        {% assign par = site.docs | where: "lang", page.lang | where: "link-ref", child %}
+        {% assign par = par[0] %}
+        {% if forloop.index0 != 0 %},{% endif %}
+        <a href="{{ site.baseurl }}/{{ page.lang }}/{{ par.category }}/{{ par.link-ref }}/">{{ par.title }}</a>
+    {% endfor %}
+    {% if page.related != nil %}<br />{% endif %}
+{% endif %}
+{% if page.related != nil %}
+    🔀관련 문서: {% for rel in page.related %}
+        {% assign par = site.docs | where: "lang", page.lang | where: "link-ref", rel %}
+        {% assign par = par[0] %}
+        {% if forloop.index0 != 0 %},{% endif %}
+        <a href="{{ site.baseurl }}/{{ page.lang }}/{{ par.category }}/{{ par.link-ref }}/">{{ par.title }}</a>
+    {% endfor %}
+{% endif %}
+</p>
+{% endif %}
 {% if page.summary != nil %}
 <blockquote>{{ page.summary }}</blockquote>
 {% endif %}
