@@ -18,6 +18,8 @@ tag:
   - "Newton's Method"
 
 write_time: 2021-09-01 23:39:52+09:00
+
+parent: "titration"
 ---
 
 ### 방정식 유도

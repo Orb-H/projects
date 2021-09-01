@@ -18,6 +18,8 @@ tags:
 summary: "산-염기 적정을 방정식으로 나타내고 이 해를 구하여 예측값을 구하는 프로그램 개발"
 write_time: 2021-07-15T23:27:28+09:00
 edited_time: 2021-08-22T22:17:03+09:00
+
+children: "titration/equation"
 ---
 
 ### 계기
