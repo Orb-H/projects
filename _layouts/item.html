@@ -116,6 +116,12 @@ layout: default
                 setTimeout(function() {do_process = true;}, 500);
             }
         }
+
+        setTimeout(function() {
+            if (location.href.indexOf("#") != -1) {
+                document.getElementById(location.href.split("#")[1]).scrollIntoView();
+            }
+        }, 500);
     }
 
     function isElementInViewport (el) {
