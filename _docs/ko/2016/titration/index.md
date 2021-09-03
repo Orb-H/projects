@@ -17,7 +17,7 @@ tags:
   - "Newton's Method"
 summary: "산-염기 적정을 방정식으로 나타내고 이 해를 구하여 예측값을 구하는 프로그램 개발"
 write_time: 2021-07-15T23:27:28+09:00
-edited_time: 2021-08-22T22:17:03+09:00
+edited_time: 2021-09-03T23:04:09+09:00
 
 children: "titration/equation"
 ---
@@ -43,19 +43,19 @@ children: "titration/equation"
 산성 물질에 대한 Henderson-Hasselbalch 식은 아래와 같다.
 
 $$
-pH=pK_a +\log{\frac{[A^-]}{[HA]}}
+pH=pK_a+\log{\frac{\left[A^-\right]}{\left[HA\right]}}
 $$
 
 이제 산 HA에 염기 BOH를 첨가하여 적정하는 상황을 가정한다. 그러면 화학식은 아래와 같이 쓸 수 있다.
 
 $$
-HA+BOH\rightarrow H_2O+A^{-}+B^{+},K=\frac{[A^{-}]}{[HA]}\frac{[B^{+}]}{[BOH]}=\frac{K_aK_b}{K_w}
+HA+BOH\rightarrow H_2O+A^-+B^+,K=\frac{\left[A^-\right]}{\left[HA\right]}\frac{\left[B^+\right]}{\left[BOH\right]}=\frac{K_aK_b}{K_w}
 $$
 
 산 HA는 농도 M<sub>a</sub>에 V<sub>a</sub>mL, 염기 BOH는 농도 M<sub>b</sub>에 V<sub>b</sub>mL가 존재한다고 생각하면 이를 섞었을 때 농도값을 보정해야 한다. 산은 $M'_a=M_a\times\frac{V_a}{V_a+V_b}$, 염기는 $M'_b=M_b\times\frac{V_b}{V_a+V_b}$의 농도를 가지게 된다. 이제 이 농도를 이용하여 반응의 정도를 계산한다. 반응한 단위부피 당 HA의 몰 수를 $x$로 놓으면 아래와 같이 식을 쓸 수 있다.
 
 $$
-Q=\frac{[A^{-}][B^{+}]}{[HA][BOH]}=\frac{x^2}{(M'_a-x)(M'_b-x)}
+Q=\frac{\left[A^-\right]\left[B^+\right]}{\left[HA\right]\left[BOH\right]}=\frac{x^2}{(M'_a-x)(M'_b-x)}
 $$
 
 위의 반응지수 값이 평형상수 값과 같아야 하므로 방정식을 아래와 같이 쓸 수 있다.
@@ -69,7 +69,7 @@ $$
 위 방정식에서 $x$ 자리에 0과 $M'_a$를 각각 넣어보면 전자는 $KM'_aM'_b$로 양수, 후자는 $-{M'_a}^{2}$로 음수가 나오므로 반드시 (0, $M'_a$) 사이에 해가 단 하나 존재한다[^1] [^2]. 그 유일한 해 x를 사용하여 pH를 구할 것이다. pH는 위에서 언급한 Henderson-Hasselbalch 식을 사용해서 구한다.
 
 $$
-pH=pK_a+\log{\frac{[A^{-}]}{[HA]}}=pK_a+\log{\frac{x}{M'_a-x}}
+pH=pK_a+\log{\frac{\left[A^-\right]}{\left[HA\right]}}=pK_a+\log{\frac{x}{M'_a-x}}
 $$
 
 ##### 염기성 용액을 산성 용액으로 적정할 때의 pH
@@ -77,10 +77,10 @@ $$
 이 경우는 위의 경우를 조금 변형시키면 같은 방식으로 계산이 가능하다. 이것은 pOH의 개념을 도입하면 쉽게 설명이 가능하다.
 
 $$
-pOH=-\log{[OH^-]}\\
+pOH=-\log{\left[OH^-\right]}\\
 \begin{aligned}
-pH+pOH&=-(\log{[H^+]}+\log{[OH^-]})\\
-&=-\log{[H^+][OH^-]}\\
+pH+pOH&=-(\log{\left[H^+\right]}+\log{\left[OH^-\right]})\\
+&=-\log{\left[H^+\right]\left[OH^-\right]}\\
 &=-\log{K_w}\\
 &=pK_w\simeq14(298K)
 \end{aligned}
@@ -89,8 +89,8 @@ $$
 이제 위와 마찬가지로 구하되, 염기성 용액에 대한 Henderson-Hasselbalch 식을 사용하고, pH 대신 pOH를 구한 후 이 값을 14에서 빼주면 pH를 구할 수 있다. 식으로 표현하면 아래와 같다.
 
 $$
-pOH=pK_b+\log{\frac{[B^+]}{[BOH]}}=pK_b+\log{\frac{x}{M'_b-x}}\\
-pH=14-pOH=14-x
+pOH=pK_b+\log{\frac{\left[B^+\right]}{\left[BOH\right]}}=pK_b+\log{\frac{y}{M'_b-y}}\\
+pH=14-pOH=14-(-\log_{10}{y})
 $$
 
 #### 개발
@@ -135,16 +135,16 @@ $$
 반응식에 연관된 이온들을 모두 찾은 후 전하의 균형을 맞추고 A와 B에 대하여 질량 균형을 맞춰보면 아래와 같다.
 
 $$
-[H^+]+[BH^+]=[A^-]+[OH^-]\\
-[HA]_0=[HA]+[A^-]\\
-[B]_0=[B]+[BH^+]
+\left[H^+\right]+\left[BH^+\right]\left=[A^-\right]+\left[OH^-\right]\\
+\left[HA\right]_0=\left[HA\right]+\left[A^-\right]\\
+\left[B\right]_0=\left[B\right]+\left[BH^+\right]
 $$
 
 그리고 위에서 적은 반응식에 대하여 평형 상수를 구해보면 아래와 같다.
 
 $$
-K_1=K_a=\frac{[H^+][A^-]}{[HA]}\\
-K_2=K_b=\frac{[BH^+][OH^-]}{[B]}\\
+K_1=K_a=\frac{\left[H^+\right]\left[A^-\right]}{\left[HA\right]}\\
+K_2=K_b=\frac{\left[BH^+\right]\left[OH^-\right]}{\left[B\right]}\\
 K_3=K_w
 $$
 
@@ -155,10 +155,10 @@ $$
 K_a&\rightarrow&a\\
 K_b&\rightarrow&b\\
 K_w&\rightarrow&w\\
-[HA]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
-[B]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
-[H^+]&\rightarrow&x\\
-[OH^-]&\rightarrow&y&=w/x
+\left[HA\right]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
+\left[B\right]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
+\left[H^+\right]&\rightarrow&x\\
+\left[OH^-\right]&\rightarrow&y&=w/x
 \end{aligned}
 $$
 
@@ -183,17 +183,17 @@ $$
 전하 균형과 질량 균형을 맞춰보면 아래와 같다.
 
 $$
-[H^+]+[BH^+]=[HA^-]+2[A^{2-}]+[OH^-]\\
-[H_2A]_0=[H_2A]+[HA^-]+[A^{2-}]\\
-[B]_0=[B]+[BH^+]
+\left[H^+\right]+\left[BH^+\right]=\left[HA^-\right]+2\left[A^{2-}\right]+\left[OH^-\right]\\
+\left[H_2A\right]_0=\left[H_2A\right]+\left[HA^-\right]+\left[A^{2-}\right]\\
+\left[B\right]_0=\left[B\right]+\left[BH^+\right]
 $$
 
 각 반응식에 대한 평형 상수는 아래와 같다.
 
 $$
-K_1=K_{a1}=\frac{[H^+][HA^-]}{[H_2A]}\\
-K_2=K_{a2}=\frac{[H^+][A^{2-}]}{[HA^-]}\\
-K_3=K_b=\frac{[BH^+][OH^-]}{[B]}\\
+K_1=K_{a1}=\frac{\left[H^+\right]\left[HA^-\right]}{\left[H_2A\right]}\\
+K_2=K_{a2}=\frac{\left[H^+\right]\left[A^{2-}\right]}{\left[HA^-\right]}\\
+K_3=K_b=\frac{\left[BH^+\right]\left[OH^-\right]}{\left[B\right]}\\
 K_4=K_w
 $$
 
@@ -205,10 +205,10 @@ K_{a1}&\rightarrow&a\\
 K_{a2}&\rightarrow&a'\\
 K_b&\rightarrow&b\\
 K_w&\rightarrow&w\\
-[H_2A]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
-[B]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
-[H^+]&\rightarrow&x\\
-[OH^-]&\rightarrow&y&=w/x
+\left[H_2A\right]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
+\left[B\right]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
+\left[H^+\right]&\rightarrow&x\\
+\left[OH^-\right]&\rightarrow&y&=w/x
 \end{aligned}
 $$
 
@@ -235,18 +235,18 @@ $$
 전하 균형과 질량 균형을 맞춰보면 아래와 같다.
 
 $$
-[H^+]+[BH^+]=[H_2A^-]+2[HA^{2-}]+3[A^{3-}]+[OH^-]\\
-[H_3A]_0=[H_3A]+[H_2A^-]+[HA^{2-}]+[A^{3-}]\\
-[B]_0=[B]+[BH^+]
+\left[H^+\right]+\left[BH^+\right]=\left[H_2A^-\right]+2\left[HA^{2-}\right]+3\left[A^{3-}\right]+\left[OH^-\right]\\
+\left[H_3A\right]_0=\left[H_3A\right]+\left[H_2A^-\right]+\left[HA^{2-}\right]+\left[A^{3-}\right]\\
+\left[B\right]_0=\left[B\right]+\left[BH^+\right]
 $$
 
 각 반응식에 대한 평형 상수는 아래와 같다.
 
 $$
-K_1=K_{a1}=\frac{[H^+][H_2A^-]}{[H_3A]}\\
-K_2=K_{a2}=\frac{[H^+][HA^{2-}]}{[H_2A^-]}\\
-K_3=K_{a3}=\frac{[H^+][A^{3-}]}{[HA^{2-}]}\\
-K_4=K_b=\frac{[BH^+][OH^-]}{[B]}\\
+K_1=K_{a1}=\frac{\left[H^+\right]\left[H_2A^-\right]}{\left[H_3A\right]}\\
+K_2=K_{a2}=\frac{\left[H^+\right]\left[HA^{2-}\right]}{\left[H_2A^-\right]}\\
+K_3=K_{a3}=\frac{\left[H^+\right]\left[A^{3-}\right]}{\left[HA^{2-}\right]}\\
+K_4=K_b=\frac{\left[BH^+\right]\left[OH^-\right]}{\left[B\right]}\\
 K_5=K_w
 $$
 
@@ -259,10 +259,10 @@ K_{a2}&\rightarrow&a'\\
 K_{a3}&\rightarrow&a''\\
 K_b&\rightarrow&b\\
 K_w&\rightarrow&w\\
-[H_3A]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
-[B]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
-[H^+]&\rightarrow&x\\
-[OH^-]&\rightarrow&y&=w/x
+\left[H_3A\right]_0\cdot\frac{V}{V+v}&\rightarrow&A\\
+\left[B\right]_0\cdot\frac{v}{V+v}&\rightarrow&B\\
+\left[H^+\right]&\rightarrow&x\\
+\left[OH^-\right]&\rightarrow&y&=w/x
 \end{aligned}
 $$
 
