@@ -49,6 +49,10 @@ Content
 
 #### Finished
 
+|Year|Title|Note|
+|-|-|-|
+||||
+
 #### Work in progress
 
 |Progress|Year|Title|Note|
@@ -75,4 +79,4 @@ Content
 
 ---
 
-[^1]: A spreadsheet program of Hancom Office, which is developed by 한글과컴퓨터(meaning 'Hangul and Computer')
+[^1]: A spreadsheet program of Hancom Office, which is developed by 한글과컴퓨터(*Hangeulgwakeompyuteo*, meaning 'Hangeul and Computer')
