@@ -17,7 +17,7 @@ tags:
   - "Newton's Method"
 summary: "산-염기 적정을 방정식으로 나타내고 이 해를 구하여 예측값을 구하는 프로그램 개발"
 write_time: 2021-07-15T23:27:28+09:00
-edited_time: 2021-09-03T23:04:09+09:00
+edited_time: 2021-09-06T22:39:20+09:00
 
 children: "titration/equation"
 ---
