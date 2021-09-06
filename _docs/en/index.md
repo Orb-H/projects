@@ -53,12 +53,13 @@ Content
 
 |Progress|Year|Title|Note|
 |:-:|-|-|-|
-|![60%](https://progress-bar.dev/60/)|2016~7|[Acid-base Titration Simulation]({{ site.baseurl }}/{{ page.lang }}/2016/titration/)|Toy project / Graduation paper for high school|
+|||||
 
 #### To be added soon
 
 |Year|Title|Note|
 |-|-|-|
+|2016~7|Acid-base Titration Simulation|Toy project / Graduation paper for high school|
 |2017|Coconuts|Application for convenient use of a website registering self-study location + Automated registering system|
 |2019|SKKOIN|Cryptocurrency for SKKU, 'Co-op Project'(2019) Project|
 |2016|covista();|~~Super-inexpensive~~ 3D Scanner with Arduino, CS-project(11th grade) assignment|
