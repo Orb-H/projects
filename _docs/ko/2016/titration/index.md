@@ -135,7 +135,7 @@ $$
 반응식에 연관된 이온들을 모두 찾은 후 전하의 균형을 맞추고 A와 B에 대하여 질량 균형을 맞춰보면 아래와 같다.
 
 $$
-\left[H^+\right]+\left[BH^+\right]\left=[A^-\right]+\left[OH^-\right]\\
+\left[H^+\right]+\left[BH^+\right]=\left[A^-\right]+\left[OH^-\right]\\
 \left[HA\right]_0=\left[HA\right]+\left[A^-\right]\\
 \left[B\right]_0=\left[B\right]+\left[BH^+\right]
 $$
