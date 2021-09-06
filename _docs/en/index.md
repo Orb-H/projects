@@ -46,3 +46,32 @@ Content
 : A content of page.
 
 ### List of Projects
+
+#### Finished
+
+#### Work in progress
+
+|Progress|Year|Title|Note|
+|:-:|-|-|-|
+|![60%](https://progress-bar.dev/60/)|2016~7|[Acid-base Titration Simulation]({{ site.baseurl }}/{{ page.lang }}/2016/titration/)|Toy project / Graduation paper for high school|
+
+#### To be added soon
+
+|Year|Title|Note|
+|-|-|-|
+|2017|Coconuts|Application for convenient use of a website registering self-study location + Automated registering system|
+|2019|SKKOIN|Cryptocurrency for SKKU, 'Co-op Project'(2019) Project|
+|2016|covista();|~~Super-inexpensive~~ 3D Scanner with Arduino, CS-project(11th grade) assignment|
+|2017,2020|[ProbieLang](https://heartade.github.io/ProbieLang) Interpreter|Java, JS|
+|2019|Code Inverter|'Programming Language'(2019-2) assignment|
+|2018,2019|Tetris(Java)|Toy project / Originally planned to submit as 'JAVA-programming Lab'(2019-1) assignment|
+|2019|TBS(Turn-Based Strategy) Card Battle Game|'JAVA-programming Lab'(2019-1) assignment|
+|2019|Problem-Solving Strategy Assignments|'Problem-Solving Strategy'(2019-2)|
+|2021|Project Prism|Rhythm game developed while on a military service, paused developing|
+|2020,2021|근무생성기.cell|**Hancell[^1] file** for auto-generating work shift, developed while on a military service|
+|2021|Tetris(JS)|Toy project / Developed while on a military service|
+|~~2015~~|~~H-owler(ProjectLCK)~~|~~Hide-and-seek game inspired by dormitory in high school, **Minecraft Plugin**~~|
+
+---
+
+[^1]: A spreadsheet program of Hancom Office, which is developed by 한글과컴퓨터(meaning 'Hangul and Computer')
