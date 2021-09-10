@@ -3,7 +3,7 @@ title: 산-염기 적정 시뮬레이션/방정식 유도
 category: 2016
 lang: ko
 link-ref: titration/equation
-permalink: /ko/2016/titration/equation/
+permalink: /ko/2016/titration/equation
 layout: item
 
 hidden_category: true
