@@ -6,7 +6,7 @@
 
 |연도|상태|제목|비고|
 |-|:-:|-|-|
-|2016,2017|In Progress|[산-염기 적정 시뮬레이션](https://orb-h.github.io/projects/2016/titration)|고2 토이 프로젝트 / 고등학교 졸업논문|
+|2016,2017|In Progress|[산-염기 적정 시뮬레이션](https://orb-h.github.io/projects/ko/2016/titration)|고2 토이 프로젝트 / 고등학교 졸업논문|
 |2017|Not Started|Coconuts|고등학교 자습실 신청 사이트 대체용 어플리케이션 및 자동신청 시스템|
 |2019|Not Started|SKKOIN|성균관대학교 암호화폐 개발, 산학협력프로젝트 과목 프로젝트|
 |2016|Not Started|covista();|Arduino를 사용한 ~~초저가형~~ 3D 스캐너, 고등학교 2학년 정보과학프로젝트 수행평가|
