@@ -1,0 +1,20 @@
+.content > h3::before,
+.content > h4::before,
+.content > h5::before,
+.content > h6::before {
+    content: "▽ ";
+}
+
+.content > h3.folded, .content > h3.folded *,
+.content > h4.folded, .content > h4.folded *,
+.content > h5.folded, .content > h5.folded *,
+.content > h6.folded, .content > h6.folded * {
+    opacity: 0.5;
+}
+
+.content > h3.folded::before,
+.content > h4.folded::before,
+.content > h5.folded::before,
+.content > h6.folded::before {
+    content: "▷ ";
+}
