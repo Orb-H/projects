@@ -12,9 +12,7 @@ layout: default
 {% if page.write_time != nil %}
     {{ menu.write_time }}: {{ page.write_time }}<br />
 {% endif %}
-{% if page.edit_time != nil %}
-    {{ menu.edit_time }}: {{ page.edit_time }}<br />
-{% endif %}
+{{ menu.edit_time }}: {{ page.last_modified_at }}<br />
 </p>
 <p>
     {% for tag in page.tags %}
