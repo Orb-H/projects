@@ -3,7 +3,7 @@ title: 산-염기 적정 시뮬레이션/방정식 유도
 category: 2016
 lang: ko
 link-ref: titration/equation
-permalink: /ko/2016/titration/equation/
+permalink: /ko/2016/titration/equation
 layout: item
 
 hidden_category: true
@@ -30,7 +30,7 @@ parent: "titration"
 
 ##### 농도를 식으로 변환
 
-[원문](..)에 따르면 얻은 방정식은 아래와 같다.
+[원문](../{{ page.parent }})에 따르면 얻은 방정식은 아래와 같다.
 
 $$
 \left[H^+\right]+\left[BH^+\right]=\left[A^-\right]+\left[OH^-\right]\\
@@ -118,7 +118,7 @@ $$
 
 ##### 농도를 식으로 변환
 
-[원문](..)에 따르면 얻은 방정식은 아래와 같다.
+[원문](../{{ page.parent }})에 따르면 얻은 방정식은 아래와 같다.
 
 $$
 \left[H^+\right]+\left[BH^+\right]=\left[HA^-\right]+2\left[A^{2-}\right]+\left[OH^-\right]\\
@@ -216,7 +216,7 @@ $$
 
 ##### 농도를 식으로 변환
 
-[원문](..)에 따르면 얻은 방정식은 아래와 같다.
+[원문](../{{ page.parent }})에 따르면 얻은 방정식은 아래와 같다.
 
 $$
 \begin{aligned}
@@ -350,7 +350,7 @@ $$
 
 #### 1가 산-1가 염기
 
-[위에서 얻은 방정식](./#s-1.1.2)을 가져와보면 아래와 같다.
+[위에서 얻은 방정식](#s-1.1.2)을 가져와보면 아래와 같다.
 
 $$
 \begin{aligned}
@@ -373,7 +373,7 @@ $$
 
 #### 2가 산-1가 염기
 
-[위에서 얻은 방정식](./#s-1.2.2)을 가져와보면 아래와 같다.
+[위에서 얻은 방정식](#s-1.2.2)을 가져와보면 아래와 같다.
 
 $$
 \begin{aligned}
@@ -399,7 +399,7 @@ $$
 
 #### 3가 산-1가 염기
 
-[위에서 얻은 방정식](./#s-1.2.3)을 가져와보면 아래와 같다.
+[위에서 얻은 방정식](#s-1.3.2)을 가져와보면 아래와 같다.
 
 $$
 \begin{aligned}
