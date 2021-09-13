@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="600"
+   viewBox="0 0 211.66666 158.75"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="idea1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="0.94867184"
+     inkscape:cx="324.66443"
+     inkscape:cy="312.54222"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="레이어 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;fill-opacity:0.2;stroke:#bfbfbf;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1219"
+       width="37.041668"
+       height="158.75"
+       x="87.3125"
+       y="0" />
+    <rect
+       style="fill:none;fill-opacity:0.2;stroke:#bfbfbf;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1219-4"
+       width="211.66666"
+       height="37.041664"
+       x="-7.6293945e-06"
+       y="60.854168" />
+    <rect
+       style="fill:none;fill-opacity:0.2;stroke:#000000;stroke-width:1.31334;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect994"
+       width="210.35332"
+       height="157.43666"
+       x="0.65666997"
+       y="0.65666997" />
+    <rect
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect31"
+       width="37.04166"
+       height="37.041664"
+       x="87.3125"
+       y="60.854168" />
+    <path
+       style="fill:none;fill-opacity:0.2;stroke:#0080ff;stroke-width:0.79375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 87.3125,24.738541 c 37.04167,0 37.04167,0 37.04167,0 z"
+       id="path1984" />
+    <path
+       style="fill:none;fill-opacity:0.2;stroke:#0080ff;stroke-width:0.79375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 132.68854,60.854168 c 0,37.04167 0,37.04167 0,37.04167 z"
+       id="path1984-2" />
+    <rect
+       style="fill:#0080ff;fill-opacity:0.3;stroke:#0080ff;stroke-width:0.792349;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2218"
+       width="44.186817"
+       height="37.043068"
+       x="26.854507"
+       y="60.85347" />
+    <rect
+       style="fill:none;fill-opacity:0.3;stroke:#ff8000;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2286"
+       width="92.604164"
+       height="92.604164"
+       x="59.531239"
+       y="33.072922" />
+    <path
+       id="rect2286-2-6"
+       style="fill:#ff8000;fill-opacity:0.30000001;stroke:#ff8000;stroke-width:3"
+       d="M 145 45 L 145 555 L 655 555 L 655 45 L 145 45 z M 175 75 L 625 75 L 625 525 L 175 525 L 175 75 z "
+       transform="scale(0.26458333)" />
+  </g>
+</svg>

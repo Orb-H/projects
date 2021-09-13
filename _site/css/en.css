@@ -1,0 +1,25 @@
+body {
+    font-family: "Roboto", "Noto Sans KR", serif;
+}
+
+pre,
+code,
+tt {
+    font-family: Inconsolata, Consolas, Courier, "Courier New", "Liberation Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label,
+select,
+textarea,
+table,
+.badge
+.nav-item {
+    font-family: "Open Sans", sans-serif;
+}
