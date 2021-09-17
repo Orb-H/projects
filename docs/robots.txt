@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://orb-h.github.io/sitemap.xml
+Disallow: /search/
