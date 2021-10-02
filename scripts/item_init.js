@@ -71,6 +71,11 @@ window.onload = function() {
                 cur_node = folder.nextSibling;
             }
         }
+
+        if (headings[i].textContent.endsWith("]#[")) {
+            toggle_fold(headings[i].children[0].id);
+            headings[i].innerHTML = headings[i].innerHTML.replace("]#[", "");
+        }
     }
 
     ps = Array.from(document.getElementsByTagName("div"));
