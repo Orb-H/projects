@@ -18,3 +18,15 @@
 .content > h6.folded::before {
     content: "▷ ";
 }
+
+details summary:nth-child(1)::after {
+    content: " ]";
+}
+
+details summary:nth-child(1)::before {
+    content: "[ ▶ ";
+}
+
+details[open] summary:nth-child(1)::before {
+    content: "[ ▼ ";
+}
