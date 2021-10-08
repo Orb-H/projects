@@ -111,7 +111,7 @@ NFA는 Non-deterministic Finite Automaton의 약자이다. NFA는 (Q,Σ,Δ,q<sub
 
 ```kotlin
 q[0] = set(q_0)
-for i in [0, n):
+for i in range(0, n):
     q[i+1] = set()
     for x in q[i]:
         q[i+1] = union(q[i+1], Δ(x, w[i]))
