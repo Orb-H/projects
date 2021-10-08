@@ -59,7 +59,7 @@ permalink: /ko/
 |진행률|연도|제목|비고|
 |:-:|-|-|-|
 |![60%](https://progress-bar.dev/60/)|2016~7|[산-염기 적정 시뮬레이션]({{ site.baseurl }}/{{ page.lang }}/2016/titration)|고2 토이 프로젝트 / 고등학교 졸업논문|
-|![90%](https://progress-bar.dev/90/)|2019|코드 변환기|2019-2 프로그래밍언어 과목 과제|
+|![90%](https://progress-bar.dev/90/)|2019|[코드 변환기]({{ site.baseurl }}/{{ page.lang }}/2019/plcomp)|2019-2 프로그래밍언어 과목 과제|
 |![5%](https://progress-bar.dev/5/)|2021|Project Prism|군대 **사지방**에서 제작하다가 중단한 리듬게임|
 
 #### 작성 예정인 프로젝트
