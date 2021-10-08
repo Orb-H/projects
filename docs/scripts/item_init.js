@@ -71,6 +71,11 @@ window.onload = function() {
                 cur_node = folder.nextSibling;
             }
         }
+
+        if (headings[i].textContent.endsWith("]#[")) {
+            toggle_fold(headings[i].children[0].id);
+            headings[i].innerHTML = headings[i].innerHTML.replace("]#[", "");
+        }
     }
 
     ps = Array.from(document.getElementsByTagName("div"));
@@ -79,10 +84,12 @@ window.onload = function() {
         if (do_process) {
             do_process = false;
             setTimeout(function() {
-                for (var i = ps.length - 1; i >= 0; i--) {
+                var len = ps.length;
+                for (var i = 0; i < len; i++) {
                     if (isElementInViewport(ps[i])) {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, ps[i]]);
                         ps.splice(i, 1);
+                        len -= 1;
                     }
                 }
             }, 0);
@@ -102,9 +109,9 @@ function isElementInViewport (el) {
 
     return (
         (rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom >= 0) && /* or $(window).height() */
+        rect.bottom >= 0) &&
         (rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-        rect.right >= 0) /* or $(window).width() */
+        rect.right >= 0)
     );
 }
 
