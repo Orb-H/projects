@@ -98,7 +98,7 @@
                         		{% continue %}
                     		{% endif %}
 							{% assign items = group.items | sort: 'order' %}
-							{{ group.name }}
+							<a>{{ group.name }}</a>
 							<ul>
 								{% for item in items %}
 									<li class="nav-item"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
