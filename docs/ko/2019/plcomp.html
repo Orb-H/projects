@@ -16,9 +16,9 @@
 <meta property="og:url" content="https://orb-h.github.io/projects/ko/2019/plcomp" />
 <meta property="og:site_name" content="Orb_H" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-10-08T22:56:44+09:00" />
+<meta property="article:published_time" content="2021-10-08T23:08:17+09:00" />
 <script type="application/ld+json">
-{"headline":"프로그래밍언어 최종 과제","dateModified":"2021-10-08T22:49:53+09:00","datePublished":"2021-10-08T22:56:44+09:00","url":"https://orb-h.github.io/projects/ko/2019/plcomp","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://orb-h.github.io/projects/siteicon.png"}},"@type":"Article","description":"개요","@context":"https://schema.org"}</script>
+{"headline":"프로그래밍언어 최종 과제","dateModified":"2021-10-08T23:07:07+09:00","datePublished":"2021-10-08T23:08:17+09:00","url":"https://orb-h.github.io/projects/ko/2019/plcomp","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://orb-h.github.io/projects/siteicon.png"}},"@type":"Article","description":"개요","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://orb-h.github.io/projects/feed.xml" title="Orb_H" />
@@ -169,7 +169,7 @@
 
     작성: 2021-10-08 22:48:19 +0900<br />
 
-마지막 수정: 2021-10-08 22:49:53 +0900<br />
+마지막 수정: 2021-10-08 23:07:07 +0900<br />
 </p>
 <p>
     
@@ -293,7 +293,7 @@ MV    Reg#1, Reg#2          |   Reg#1의 값을 Reg#2에 설정
 <p>위의 DFA와 다른 점은 전이 함수의 함수값의 형태가 다르다는 것이다. DFA에서는 상태와 문자를 입력값으로 하여 상태 하나를 반환하는 전이 함수 δ였지만 NFA에서는 상태의 집합을 반환한다. 이를 고려하여 동작 메커니즘을 생각해보면 아래와 같다.</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="k">set</span><span class="p">(</span><span class="n">q_0</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="k">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nf">union</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">+</span><span class="mi">1</span><span class="p">],</span> <span class="nc">Δ</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
